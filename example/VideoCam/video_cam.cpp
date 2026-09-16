@@ -13,7 +13,7 @@ VideoCam::~VideoCam() { Stop(); }
 
 // 初始化摄像头
 bool VideoCam::Initialization() {
-    std::lock_guard<std::mutex> lock(cap_mutex_);
+    std::lock_guard lock(cap_mutex_);
     for (auto& cam : cam_lists_) {
         const std::string& name = cam.first;
         int device_id = cam.second;
@@ -36,7 +36,7 @@ bool VideoCam::Initialization() {
 void VideoCam::Stop() {
     is_running = false;
     {
-        std::lock_guard<std::mutex> lock(cap_mutex_);
+        std::lock_guard lock(cap_mutex_);
         for (auto& kv : caps_) {
             if (kv.second.isOpened()) {
                 kv.second.release();
@@ -63,7 +63,7 @@ void VideoCam::Receive(void *handle, const std::string &name) {
     while (is_running) {
         cv::Mat frame_bgr;
         {
-            std::lock_guard<std::mutex> lock(cap_mutex_);
+            std::lock_guard lock(cap_mutex_);
             auto it = caps_.find(name);
             if (it == caps_.end() || !it->second.isOpened() || !it->second.read(frame_bgr)) {
                 std::cerr << "[OpenCVCam] Failed to read frame from: " << name << std::endl;
@@ -101,7 +101,7 @@ void VideoCam::Start() {
 
     is_running = true;
     {
-        std::lock_guard<std::mutex> lock(cap_mutex_);
+        std::lock_guard lock(cap_mutex_);
         for (auto& kv : caps_) {
             cam_threads_.emplace_back(&VideoCam::Receive, this, nullptr, kv.first);
             std::cout << "[OpenCVCam] Camera " << kv.first << " capture started." << std::endl;
