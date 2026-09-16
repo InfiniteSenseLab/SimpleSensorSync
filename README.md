@@ -33,13 +33,14 @@
 
 # News
 
->1. 上线自动配置工具,推荐Chorme浏览器打开[imaginative-fenglisu-9fcdf0.netlify.app](https://imaginative-fenglisu-9fcdf0.netlify.app/)
->2. 新pyhton版本使用说明文档。
->3. 增加触发引脚电流12mA，提高引脚驱动能力。
->4. 支持脉冲占空比调节。
->5. 板载IMU频率(航姿解算)提高200HZ。
->6. 完整的[使用说明与系统说明](https://github.com/InfiniteSenseLab/SimpleSensorSync/wiki)发布。
->7. Python-SDK发布，同步可视化工具发布。
+>1. 9月16号后版本中板载IMU更换成42670P。
+>2. 上线自动配置工具,推荐Chorme浏览器打开[imaginative-fenglisu-9fcdf0.netlify.app](https://imaginative-fenglisu-9fcdf0.netlify.app/)
+>3. 新pyhton版本使用说明文档。
+>4. 增加触发引脚电流12mA，提高引脚驱动能力。
+>5. 支持脉冲占空比调节。
+>6. 板载IMU频率(航姿解算)提高200HZ。
+>7. 完整的[使用说明与系统说明](https://github.com/InfiniteSenseLab/SimpleSensorSync/wiki)发布。
+>8. Python-SDK发布，同步可视化工具发布。
 
 <table>
 <tr>
