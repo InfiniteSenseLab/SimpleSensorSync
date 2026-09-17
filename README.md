@@ -33,7 +33,7 @@
 
 # News
 
->1. 2026年9月16号后版本中板载IMU更换成42670P。
+>1. 2026年9月16号后版本中板载IMU更换成ICM42670P。
 >2. 上线自动配置工具,推荐Chorme浏览器打开[imaginative-fenglisu-9fcdf0.netlify.app](https://imaginative-fenglisu-9fcdf0.netlify.app/)
 >3. 新pyhton版本使用说明文档。
 >4. 增加触发引脚电流12mA，提高引脚驱动能力。
